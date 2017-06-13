@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <title>ClassTwo</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        .basis {
+            display: block;
+            height: 50px;
+            width: 50px;
+            border: 1px solid #000;
+            margin: 0 10px;
+            float: left;
+        }
+
+        .divBasis{
+            width: 90%;
+            height: 50px;
+            margin: 10px auto;
+            border: 2px solid #000;
+            background: #ccc;
+        }
+
+        .divEnhanced{
+            width: 50%;
+            height: 100px;
+            margin: 10px auto;
+            border: 2px solid #000;
+            background: #cc7;
+        }
+
+        .bgColor_r {
+            background: #c00;
+        }
+
+        .bgColor_y {
+            background: #c0c;
+        }
+    </style>
+</head>
+<body>
+    <div class="test1">
+        <button id="btn1" onclick="btnChangeBGColor(0)">背景色样式1</button>
+        <button id="btn2" onclick="btnChangeBGColor(1)">背景色样式2</button>
+        <button id="btn3" onclick="btnChangeBGColor(2)">背景色样式3</button>
+    </div>
+
+    <div>
+        <input id="demo" type="text" value="你拍一 我拍一">
+        <button onclick="changeValue()">change value</button>
+        <button onclick="addTitle()">add title</button>
+    </div>
+
+    <div>
+        <button onclick="doCount()">统计当前页面有多少个div</button>
+    </div>
+
+    <div style="height: 50px;">
+        <button onclick="doChange()">修改前两个span的样式</button>
+        <span id="s1" class="basis"></span>
+        <span class="basis"></span>
+        <span class="basis"></span>
+        <span class="basis"></span>
+    </div>
+
+    <div>
+        <button id="msgBtn">循环输出5次log信息</button>
+    </div>
+
+    <div id="spanChange" style="height: 50px;">
+        <button onclick="forEachChange()">批量修改样式</button>
+        <span class="basis"></span>
+        <span class="basis"></span>
+        <span class="basis"></span>
+        <span class="basis"></span>
+    </div>
+
+    <div id="divChange">
+        <button onclick="overAndOver()">反复修改样式</button>
+        <div class="divBasis">可循环变化</div>
+        <div class="divBasis">可循环变化</div>
+        <div class="divBasis">可循环变化</div>
+    </div>
+    <!--script loaded here-->
+    <script>
+        function btnChangeBGColor(index) {
+            var color = ["red", "yellow", "blue"];
+            document.bgColor = color[index];
+            console.log(color[index]);
+        }
+
+        function changeValue() {
+            var demo = document.getElementById("demo");
+            demo.value = "两小儿来辩日";
+        }
+
+        function addTitle() {
+            var demo = document.getElementById("demo");
+            demo.title = "该元素的title属性."
+        }
+
+        function doCount() {
+            var count = document.getElementsByTagName("div");
+            console.log(count.length);
+        }
+
+        function doChange() {
+            var span = document.getElementsByTagName("span");
+            // 用classList添加额外的class（若样式改变较少，也可以直接修改指定样式，比如xxx.style.background）
+            span[0].classList.add("bgColor_r");
+            span[1].classList.add("bgColor_y");
+        }
+
+        // try
+        document.getElementById("msgBtn").onclick = function () {
+            for (var i = 0; i < 5; i++) {
+                console.log(`这是第${i + 1}次显示信息`);
+            }
+        }
+
+        function forEachChange() {
+            var spanElse = document.getElementById("spanChange").getElementsByTagName("span");
+            for (var i = 0; i < spanElse.length; i++) {
+                spanElse[i].classList.add("bgColor_r");
+            }
+        }
+
+        function overAndOver() {
+            var i = 0;
+            var oao = document.getElementById("divChange").getElementsByTagName("div");
+            for (i = 0; i < oao.length; i++) {
+                if (oao[i].classList.contains("divBasis")) {
+                    oao[i].className = "divEnhanced";
+                } else {
+                    oao[i].className = "divBasis";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

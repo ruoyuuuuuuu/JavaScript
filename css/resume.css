@@ -1,0 +1,44 @@
+/* 基本初始化 */
+body{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration-style: none;
+}
+
+
+.top{
+	width: 1000px;
+	height: 200px;
+	background: #CAFF70;
+	margin: 0 auto;
+}
+
+.content{
+	width: 1000px;
+	height: 600px;
+	margin: 0 auto;
+}
+
+.left{
+	float: left;
+	width: 300px;
+	height: 600px;
+	background: #EEEE00;
+}
+
+.right{
+	float: right;
+	width: 700px;
+	height: 600px;
+	background: #F4A460;
+}
+
+.foot{
+	width: 1000px;
+	height: 100px;
+	background: #CCCCCC;
+	margin: 0 auto;
+}

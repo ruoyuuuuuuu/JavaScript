@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <title>ClassOne</title>
+    
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            margin-bottom: 20px;
+        }
+
+        .test5{
+            display: none; 
+            width: 500px; 
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+
+    <script>
+        function clickBtn() {
+            console.log("弹出窗口.");
+        }
+
+        function btnMouseOver() {
+            var btn = document.getElementById("msgBtn");
+            btn.style.display = "block";
+            var box = document.getElementById("box");
+            box.style.display = "block";
+        }
+
+        function btnMouseOut() {
+            var btn = document.getElementById("msgBtn");
+            btn.style.display = "none";
+            var box = document.getElementById("box");
+            box.style.display = "none"; 
+        }
+
+        function divMouseOver() {
+            var div = document.getElementById("divTest");
+            div.style.height = "200px";
+            div.style.width = "400px";
+            div.style.background = "#cc0";
+        }
+
+        function divMouseOut() {
+            var div = document.getElementById("divTest");
+            div.style.height = "50px";
+            div.style.width = "200px";
+            div.style.background = "#ccc";
+        }
+
+        function styleOne() {
+            document.bgColor = "#c0c";
+            console.log("改变背景色.");  
+        }
+
+        function styleTwo() {
+            document.bgColor = "#0cc";
+        }
+    </script>
+</head>
+<body>
+    <!--鼠标移入移出-->
+    <div class="test2">
+        <p onmouseover="btnMouseOver()" onmouseout="btnMouseOut()">鼠标移过显示按钮，显示一个Box</p>
+    </div>
+    <!--点击按钮弹出提示窗口-->
+    <div class="test1"> 
+        <button id="msgBtn" onclick="clickBtn()" style="display: none;">Button</button>
+    </div>
+
+    <div class="test3" id="divTest" onmouseover="divMouseOver()" onmouseout="divMouseOut()" style="width: 200px; height: 50px; background: #ccc; color: #fff">
+        鼠标经过变宽变高变色，移出后恢复原样
+    </div>
+
+    <div class="test4">
+        <button id="btn1" onclick="styleOne()">styleTwo</button>
+        <button id="btn2" onclick="styleTwo()">styleOne</button>
+    </div>
+
+    <div class="test5" id="box">
+        没有人能随随便便成功.
+    </div>
+
+    <div>
+        <button onclick="clickBtn()">click me</button>
+    </div>
+
+    <!--script loaded here-->
+    <script src="./js/JSLearn.js"></script>
+</body>
+</html>

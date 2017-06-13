@@ -1,0 +1,114 @@
+.hr{
+	width: 1080px;
+	height: 2px;
+	margin: 0 auto;
+}/* 横线基础样式 */
+
+nav{
+	height: 50px;
+	background: #222;
+}
+
+nav a{
+	display: inline-block;
+	line-height: 50px;
+	color: #fff;
+}
+
+nav a:hover{
+	text-decoration: none;
+}
+
+.logo{
+	float: left;
+}
+
+.logo a{
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin-left: 260px;
+}
+
+nav ul{
+	margin-right: 210px;
+}
+
+nav ul li{
+	display: inline-block;
+	line-height: 50px;
+	float: right;
+	margin-right: 50px;
+}
+
+nav ul li a{
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+
+#banner{
+	background: url(../images/banner.jpg) no-repeat;
+	background-size: cover;
+	height: 432px;
+}
+
+#banner .inner{
+	max-width: 540px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 90px;
+	color: #FFF;
+}
+
+#banner .inner h1{
+	font-size: 45px;
+	margin-left: 65px;
+	margin-bottom: 50px;
+	letter-spacing: 2px;
+}
+
+#banner .inner p{
+	font-size: 21px;
+	line-height: 30px;
+}
+
+#banner .inner button{
+	border: none;
+	background: transparent;/* 透明效果 */
+	color: #FFF;
+	margin-top:80px;
+	padding: 14px 20px;
+}
+
+.content{
+	color: #222;
+}
+
+.content .hr{
+	background: #222;
+	width: 100%;
+}
+
+.wrapper{
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+.partOne{
+	height: 400px;
+	background: #fff;
+	text-align: center;
+}
+
+.partOne_header h2{
+	font-size: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.text_{
+	width: 33.3%;
+}
+
+
